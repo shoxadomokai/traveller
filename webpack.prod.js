@@ -15,11 +15,9 @@ module.exports = merge(common, {
   },
   plugins: [
     new MiniCssExtractPlugin({ filename: "[name].css" }),
-    // new WorkboxPlugin.InjectManifest({
-    //   swSrc: "./src/client/views/sw.js"
-    // }),
     new WorkboxPlugin.GenerateSW({
-      swDest: "./src/client/views/sw.js"
+      clientsClaim: true,
+      skipWaiting: true
     })
   ],
   module: {

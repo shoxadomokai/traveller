@@ -1,18 +1,39 @@
-# Webbpack Express Example App
+![Lingu](./src/client/images/landscape-logo.svg)
 
-The goal of this repo is be an example of a basic but functional app built on Express and Webpack.
+# Lingu - Natural Language Processor
 
-If you want to follow along, start from master and look at the numbered branches of this project. Each one is a step along the path to creating a fully functional webpack setup. In each branch, there will be a documentation file that lists out the steps taken in that branch (each step is also a git commit if you look at the history) which you can use as a checklist when setting up your own projects. 
+Lingu is a natural language processing website built on the Aylien web api.
 
-## Get Up and Running
+The goal for this was to create a functioning frontend application using Node/Express and Webpack as part of the Udacity Frontend Nanodegree.
 
-Fork this repo, then clone your forked repo down to your computer:
+## Instructions
 
+Nothing fancy here in terms of installation simply make a fork and work your magic.
+
+### As a Developer
+
+After cloning the repo, cd into the folder and run:
+
+```shell
+npm install
 ```
-git clone -- git@github.com:[your-user-name]/webpack-express.git --
-```
 
-`cd` into your new folder and run:
-- ```npm install```
-- ```npm start``` to start the app
-- this app runs on localhost:8080, but you can of course edit that in server.js
+This will download all the dependencies you need to get the application working.
+
+### As a User
+
+There are three simple steps to using the Lingu website to analyse a document or article or text. And because it is built on the [Aylien](https://aylien.com/) API, it also has support for [16 languages](https://aylien.com/).
+
+#### Step 1: Enter Your Text/URL
+
+Enter the text or the URL of an article that you would like to analyse.
+
+#### Step 2: Select Your Mode
+
+Select the kind of document you would like to analyse. The default mode is set to Tweet which is useful for well tweets and other short texts.
+
+Use the Document mode if you're analysing large texts, entering a URL or reviewing an article.
+
+#### Step 3: Analyse Your Text
+
+Hit the analyse button to extract meaning and insight from textual content with ease.
