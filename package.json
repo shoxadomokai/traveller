@@ -1,15 +1,15 @@
 {
-  "name": "example-project",
+  "name": "Lingu",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "nodemon src/server/index.js",
-    "build": "webpack --config webpack.prod.js && start http://localhost:8081/",
+    "start": "node src/server/index.js",
+    "build": "webpack --config webpack.prod.js",
     "serve": "webpack-dev-server --config webpack.dev.js --open"
   },
   "keywords": [],
-  "author": "",
+  "author": "Shox Adomokai",
   "license": "ISC",
   "description": "",
   "dependencies": {
@@ -45,5 +45,8 @@
     "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^4.2.2",
     "workbox-webpack-plugin": "^5.0.0"
+  },
+  "engines": {
+    "node": "12.13.1"
   }
 }

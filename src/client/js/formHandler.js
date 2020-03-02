@@ -54,9 +54,10 @@ const showResults = boolean => {
     resultsShowing.setAttribute("class", "");
   } else if (boolean === loading) {
     resultsUnavailable.setAttribute("class", "hidden");
-    loadingScreen.setAttribute("class", "");
-    loadingScreen.classList.add("play");
     resultsShowing.setAttribute("class", "hidden");
+    loadingScreen.setAttribute("class", "");
+    loadingScreen.scrollIntoView();
+    loadingScreen.classList.add("play");
   } else {
     resultsUnavailable.setAttribute("class", "");
     loadingScreen.setAttribute("class", "hidden");
