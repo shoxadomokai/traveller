@@ -89,7 +89,7 @@ export const handleSubmit = event => {
   showResults(loading);
   var text = document.getElementById("analyseText").value;
   var mode = document.getElementById("document-mode").value;
-  postData("http://localhost:8081/analyse", {
+  postData("/analyse", {
     text,
     mode
   }).then(newData => {

@@ -68,6 +68,6 @@ app.post("/analyse", function(req, res) {
 });
 
 // designates what port the app will listen to for incoming requests
-app.listen(8081, function() {
-  console.log("Visit the website at: http://127.0.0.1:8081/");
+app.listen(8080, function() {
+  console.log("Visit the website at: http://127.0.0.1:8080/");
 });
