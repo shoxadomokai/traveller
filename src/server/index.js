@@ -67,7 +67,9 @@ app.post("/analyse", function(req, res) {
   apiCall(req, res);
 });
 
+//allows the port to be set by the hosting platform
+var port = process.env.PORT || 8080;
 // designates what port the app will listen to for incoming requests
-app.listen(8080, function() {
-  console.log("Visit the website at: http://127.0.0.1:8080/");
+app.listen(port, function() {
+  console.log(`Visit the website at: http://127.0.0.1:${port}/`);
 });
