@@ -1,6 +1,4 @@
 import { extractInput } from "./js/formHandler";
-import { getResults } from "./js/formHandler";
-import { resultsJS } from "./js/results.js";
 import { launchToDo } from "./js/results.js";
 
 //styles
@@ -17,10 +15,5 @@ import "./images/next.svg";
 import "./images/cloudy.svg";
 import "./images/poweredby-darksky.png";
 import "./images/poweredby-pixabay.png";
-
-// getResults().then(() => {
-//   resultsJS();
-//   launchToDo;
-// });
 
 export { extractInput, launchToDo };

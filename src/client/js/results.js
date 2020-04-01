@@ -293,7 +293,7 @@ export const resultsJS = () => {
     localStorage.setItem("toDos", JSON.stringify(toDos));
   };
 
-  getData("http://127.0.0.1:8000/trips").then(data => {
+  getData("/trips").then(data => {
     for (let trip of data) {
       trip.weather.sort(function(a, b) {
         return a.time - b.time;

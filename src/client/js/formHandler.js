@@ -137,11 +137,11 @@ export const extractInput = async event => {
   createTrip();
   animateSubmit();
   await getCoordinates();
-  await postData("http://127.0.0.1:8000/trips", trips);
+  await postData("/trips", trips);
   await setTimeout(deanimateSubmit, 1000);
   await getResults();
-  await resultsJS();
-  await launchToDo;
+  resultsJS();
+  launchToDo;
 };
 
 const animateSubmit = () => {
