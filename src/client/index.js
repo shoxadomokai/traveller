@@ -5,7 +5,6 @@ import { launchToDo } from "./js/results.js";
 import "./styles/resets.scss";
 import "./styles/main.scss";
 
-// import "./views/index.html";
 import "./views/results.html";
 
 //set images
