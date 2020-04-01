@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Traveller - Trip Details</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+</head>
+
+<body class="results">
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <header id="trips_header" class="header d-flex align-items-center">
+        <nav class="navigation container d-flex justify-content-between">
+            <a href="index.html" class="nav-link">TRAVELLER</a>
+            <a href="" class="nav-link">LEARN MORE</a>
+        </nav>
+        <section class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-xl-8 mb-5 mb-lg-0">
+                    <span class="subtitle">Enjoy
+                        <span class="trip_location ml-2">Lagos</span>
+                    </span>
+                    <h1 class="title display-1 mb-4 mb-lg-5">Discover <br><span class="title trip_location">Lagos,
+                            Nigeria</span>
+                    </h1>
+                    <div class="col-2 px-0">
+                        <img src="../images/next.svg" alt="back button" id="go-back" title="click to go back"
+                            class="img-fluid" id="next-button">
+                    </div>
+                </div>
+                <div class="offset-xl-2 mt-5 mt-xl-0 col-xl-2 d-xl-flex align-items-center">
+                    <p class="d-xl-none">DAYS LEFT TILL YOUR TRIP</p>
+                    <ul class="countdown d-flex d-xl-block">
+                        <li class="countdown-digit text-center mr-3 mr-xl-0">
+                            <h1 id="days" class="title display-3 mb-0">01</h1>
+                            <span class="small">Days</span>
+                        </li>
+                        <li class="countdown-digit text-center mr-3 mr-xl-0">
+                            <h1 id="hours" class="title display-3 mb-0">22</h1>
+                            <span class="small">Hours</span>
+                        </li>
+                        <li class="countdown-digit text-center mr-3 mr-xl-0">
+                            <h1 id="minutes" class="title display-3 mb-0">51</h1>
+                            <span class="small">Minutes</span>
+                        </li>
+                        <li class="countdown-digit text-center mr-3 mr-xl-0">
+                            <h1 id="seconds" class="title display-3 mb-0">16</h1>
+                            <span class="small">Seconds</span>
+                        </li>
+                    </ul>
+                    <p class="d-none d-xl-block ml-3 vertical-text">TIME LEFT TILL YOUR TRIP</p>
+                </div>
+            </div>
+        </section>
+    </header>
+    <section class="container tab-menu">
+        <ul id="tab-menu" role="tablist" class="text-center d-flex tab-menu-list justify-content-between mb-0">
+            <li data-nav="location" role="tab" aria-controls="locations" class="tab-menu-items active">LOCATIONS</li>
+            <li data-nav="to-do" role="tab" aria-controls="to-do" class="tab-menu-items">TO-DO LIST</li>
+        </ul>
+    </section>
+    <div class="tabs">
+        <section data-tab="location" id="locations" class="padding-y-medium container d-block">
+        </section>
+        <section data-tab="to-do" id="to-do" class="padding-y-medium container">
+            <h3 class="title text-center mb-5">To-Do</h3>
+            <div class="padding-x-medium">
+                <form id="to-do-form col-md-10" class="card">
+                    <div class="row">
+                        <div class="col-md-6 to-do__text-area">
+                            <textarea id="to-do__activity" class="to-do__text" name="to-do-activity"
+                                placeholder="Enter to-do"></textarea>
+                        </div>
+                        <div class="col-md-6 to-do__input-area">
+                            <div class="form-group">
+                                <label class="title h4" for="to-do-date">Enter Date</label>
+                                <input type="text" class="form-control date-picker" id="to-do__date"
+                                    placeholder="Enter Date">
+                            </div>
+                            <div class="form-group">
+                                <label class="title h4" for="to-do-location">Venue</label>
+                                <input type="text" class="form-control" id="to-do__location"
+                                    placeholder="Enter name of park, hotel, club etc">
+                            </div>
+                            <button id="to-do__button" class="btn d-block w-100 to-do__button mt-5" type="submit">Add
+                                Activity</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+            <h3 class="title text-center my-5">All To Dos</h3>
+            <div id="all-to-dos" class="row justify-content-center upcoming-todo">
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <a href="https://darksky.net/poweredby/" target="_blank" rel="noopener noreferrer">
+                        <img src="../images/poweredby-darksky.png" alt="" class="img-fluid">
+                    </a>
+                </div>
+                <div class="col-md-6 col-12">
+                    <a href="https://pixabay.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="../images/poweredby-pixabay.png" alt="" class="img-fluid">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="results.js"></script>
+</body>
+
+</html>

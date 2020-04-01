@@ -17,24 +17,34 @@ module.exports = {
         use: ["babel-loader", "eslint-loader"]
       },
       {
-        test: /\.(png|jp(e*)g|svg)$/,
+        test: /\.(png|jp(e*)g|gif|svg)$/,
         use: [
           {
-            loader: "url-loader",
+            loader: "file-loader",
             options: {
               limit: 8000, // Convert images < 8kb to base64 strings
-              name: "images/[hash]-[name].[ext]"
+              name: "[name].[ext]",
+              outputPath: "images/",
+              publicPath: "images/"
             }
           }
         ]
+      },
+      {
+        test: /\.html$/i,
+        exclude: path.resolve(__dirname, "src/client/views/index.html"),
+        loader: "file-loader",
+        options: {
+          name: "[name].[ext]"
+        }
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Lingu - Natural Language Processor",
+      title: "Traveller",
       template: "./src/client/views/index.html",
-      filename: "./index.html",
+      filename: "index.html",
       favicon: "./src/client/views/favicon.png"
     }),
     new CleanWebpackPlugin({

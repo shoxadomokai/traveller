@@ -1,151 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Traveller</title>
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 </head>
 
 <body>
-    <header id="header">
-        <nav class="navbar">
-            <img id="potrait-logo" alt="lingu logo">
-            <img id="landscape-logo" alt="lingu logo">
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <header class="header">
+        <nav class="navigation navigation-background fixed-top container d-flex justify-content-between">
+            <a href="#" class="nav-link">TRAVELLER</a>
+            <a href="" class="nav-link">LEARN MORE</a>
         </nav>
+        <section class="hero">
+            <div class="row d-flex align-items-center">
+                <div class="col-xl-6 mb-5 mb-lg-0">
+                    <span class="subtitle">Enjoy Travel</span>
+                    <h1 class="title display-1">Plan a Trip to Remember</h1>
+                    <p class="hero-body">Nothing's better than travelling and visiting new places and nothing's as scary
+                        as being in a new place on your own. Let us at Traveller help you feel at home so you can focus
+                        on the exciting parts of your trip.</p>
+                </div>
+                <div class="col-xl-6">
+                    <img id="hero-image" class="img-fluid" src="../images/hero-image.png" alt="travel items">
+                </div>
+            </div>
+        </section>
     </header>
-
-    <main class="wrapper">
-
-        <section class="input-section">
-            <div class="content-wrapper">
-                <h1 class="input-section__title">Easy as 1..2...3</h1>
-
-                <ul class="input-section__instructions">
-                    <li class="input-section__item" data-step="1">
-                        <div>
-                            <h2 class="input-section__item__header">Enter Your Text/URL</h2>
-                            <p class="input-section__item__body">Enter the text or the URL of an article to analyse.</p>
-                        </div>
-                    </li>
-                    <li class="input-section__item" data-step="2">
-                        <div>
-                            <h2 class="input-section__item__header">Select Your Mode</h2>
-                            <p class="input-section__item__body">Select the kind of document you would like to analyse.
-                            </p>
-                        </div>
-                    </li>
-                    <li class="input-section__item" data-step="3">
-                        <div>
-                            <h2 class="input-section__item__header">Analyse Your Text</h2>
-                            <p class="input-section__item__body">Extract meaning and insight from textual content with
-                                ease.</p>
-                        </div>
-                    </li>
-                </ul>
-
-                <form onsubmit="return Client.handleSubmit(event)" id="submission-form" action="" class="input-form">
-                    <div class="input-field">
-                        <label for="analyseText">
-                            Input
-                            <span id="input-type" class="input-field__description"></span>
-                        </label>
-                        <textarea onkeyup="Client.checkContent()" name="text-content" id="analyseText"
-                            placeholder="Type or paste your content in here . Or input a URL to get the content from an external source"></textarea>
+    <section class="container traveller-form-area">
+        <form id="traveller-form" class="traveller-form" onsubmit="return Client.extractInput(event)">
+            <span class="d-flex w-100 align-items-center">
+                <div class="input-wrapper">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="inlineFormInput11" placeholder=" ">
+                        <label for="inlineFormInput11">Where are you going?</label>
                     </div>
-
-                    <div class="input-field">
-                        <label for="document-mode">
-                            Mode: <small>use document mode for long texts or articles</small>
-                        </label>
-                        <select required name="mode" id="document-mode">
-                            <option value="tweet">Tweet</option>
-                            <option value="document">Document</option>
-                        </select>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="inlineFormInput12" placeholder=" ">
+                        <label class="date-picker" for="inlineFormInput12">Check In - Check Out</label>
                     </div>
-
-                    <button onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)"
-                        id="submit-button" disabled class="submit-button" type="submit">Analyse</button>
-                </form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="inlineFormInput13" placeholder=" ">
+                        <label for="inlineFormInput13">Where are you staying?</label>
+                    </div>
+                </div>
+            </span>
+            <span role="button" id="add-form-field" class="span-button">Add a New Location +</span>
+            <!-- <button onclick="return Client.extractInput(event)" onsubmit="return Client.extractInput(event)"
+                class="btn d-block w-100 form-traveller__button submitting">Submit</button> -->
+            <div class="text-center">
+                <button id="form-traveller__button" onclick="return Client.extractInput(event)"
+                    onsubmit="return Client.extractInput(event)" class="order w-100"><span class="default">Plan
+                        Trip</span><span class="success">Trip Planned
+                        <svg viewbox="0 0 12 10">
+                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                        </svg></span>
+                    <div class="box"></div>
+                    <div class="truck">
+                        <div class="back"></div>
+                        <div class="front">
+                            <div class="window"></div>
+                        </div>
+                        <div class="light top"></div>
+                        <div class="light bottom"></div>
+                    </div>
+                    <div class="lines"></div>
+                </button>
             </div>
 
-        </section>
+        </form>
+    </section>
 
-        <section class="result">
-            <h1 class="result__header">Analysis</h1>
-
-            <div id="results-available" class="hidden">
-                <p id="result__text"></p>
-                <a id="read-more" class="read-more hidden" href="" target="_blank" rel="noopener noreferrer">Read
-                    More</a>
-            </div>
-
-            <div id="no-results" class="">
-                <h2 class="no-results__title">What's Your Tone Now?</h2>
-                <img id="random-image" class="random-image" alt="">
-            </div>
-
-            <div id="loading" class="hidden">
-                <svg version="1.1" id="animation-svg" x="0px" y="0px" viewBox="0 0 163.2 287.4"
-                    style="enable-background:new 0 0 163.2 287.4;">
-                    <title>potrait-logo</title>
-                    <path class="st0" d="M60.7,211.5c-5.6-2.6-11-5.7-16.2-9.2c-10.3-7-20.5-14.2-29.1-23.3c-1.2-1.3-2.5-1.4-4.1-0.9
-                    c-4.3,1.4-7.9,6.5-7.9,10.9c0.1,4.4,1.9,8.1,4.2,11.6c4.1,6.2,9.6,11,15.4,15.4c4.3,3,8.7,5.6,13.4,7.6c4.9,2,10,3.5,15.4,3.1
-                    c6.4-0.5,10-5.4,10.9-10.7C63.2,213.7,62.4,212.4,60.7,211.5z M20.6,196.5c-1.9,2.7-5.8,3.4-8.5,1.5c-2.6-1.9-3.3-5.9-1.5-8.6
-                    c1.8-2.7,5.8-3.3,8.5-1.4C21.9,189.9,22.6,193.7,20.6,196.5z M52.5,219.3c-2,2.7-6,3.3-8.6,1.4c-2.6-1.9-3.3-6-1.4-8.6
-                    c1.9-2.7,5.9-3.3,8.6-1.4C53.7,212.6,54.4,216.7,52.5,219.3z" />
-                    <path class="st1" d="M52.5,219.3c-2,2.7-6,3.3-8.6,1.4c-2.6-1.9-3.3-6-1.4-8.6c1.9-2.7,5.9-3.3,8.6-1.4
-                    C53.7,212.6,54.4,216.7,52.5,219.3z" />
-                    <path class="st1" d="M20.6,196.5c-1.9,2.7-5.8,3.4-8.5,1.5c-2.6-1.9-3.3-5.9-1.5-8.6c1.8-2.7,5.8-3.3,8.5-1.4
-                    C21.9,189.9,22.6,193.7,20.6,196.5z" />
-                    <path class="st2" d="M161.5,176.4c0,17.4-2.7,34.2-7.6,50c-1.1,3.5-4.4,5.9-8,5.9H86c0.2-1.1,0.3-2.2,0.3-3.3
-                    c0.1-2.3-0.3-4.3-2.7-5.4c-0.6-0.3-1.2-0.8-1.8-1.3c-1.4-0.9-1.5-0.9-1.9,0.7c-0.8,3.3-1.9,6.3-3.5,9.3h-2.8
-                    c1.6-2.8,2.8-5.8,3.8-9.1c2.6-8.6,1.8-17.3-1.4-25.6c-1.2-3.1-1.5-6-1.3-9.2c0-0.3,0-0.5,0-0.8c0.2-1.5-0.3-2.7-1.1-4
-                    c-2.2-3.5-4.8-6.6-7.8-9.4c-1.3-1.3-2.2-2.5-1.7-4.4c0.3-1.1,0.3-2.4,0.5-3.5c0.1-0.6,0.1-1.3-0.5-1.7c-0.9-0.6-0.6-1.3-0.1-2
-                    c1.6-2.2,3.3-4.4,4.8-6.7c0.8-1.3,1.7-1.8,3.3-1.5c3.5,0.5,6.7-1.3,8.3-4.5c1.5-2.9,0.9-6.7-1.4-9.2c-2.2-2.4-5.8-3.2-9-2
-                    c-4.5,1.7-6.5,7-4.3,11.4c0.4,0.7,0.9,1.4,0.3,2.3c-1.9,2.7-3.9,5.4-5.8,8.1c-0.3,0.4-0.7,0.8-1.2,0.4c-1.2-0.9-2.1-0.3-3.1,0.2
-                    c-1.1,0.6-2.3,1-3.3,1.6c-0.8,0.4-1.5,0.4-2.3,0c-2.8-1.5-5.7-2.6-8.7-3.8c-3.9-1.5-7.6-1.7-11.3,0.2c-1.7,0.9-3.6,1-5.6,0.9
-                    c-8.1-0.5-15.9,1-23,5.2V129c0-4.7,3.8-8.4,8.4-8.4h76.2c6.8,0,10.8-7.7,6.9-13.3C84.4,94.5,73,83.5,59.9,74.9
-                    c-2.4-1.6-3.9-4.2-3.9-7.1V33.7c0-6.3,6.6-10.3,12.2-7.5c15.3,7.6,29.4,17.5,41.6,29.2c18.7,18,33.3,40.2,42.1,65.2
-                    C158.2,138.1,161.5,156.9,161.5,176.4z" />
-                </svg>
-
-            </div>
-
-
-        </section>
-
-        <section class="sentiment">
-            <div id="polarity">
-                <p class="polarity__status">Polarity: <span id="polarity__status">Unknown</span></p>
-                <img id="polarity-icon" title="neutral" alt="smiley showing sentiment of text">
-            </div>
-
-            <ul class="certainty">
-                <li class="certainty__confidence">
-                    <h2>Confidence <img id="confidence-icon" alt="degree of confidence"></h2>
-                    <p id="confidence-degree">Unknown</p>
-                    <div class="graph"><span id="confidence-graph"></span></div>
-                </li>
-                <li class="certainty__subjectivity">
-                    <h2>Subjectivity <img id="subjectivity-icon" alt="degree of subjectivity"></h2>
-                    <p id="subjectivity-degree">Unknown</p>
-                    <div class="graph"><span id="subjectivity-graph"></span></div>
-                </li>
-            </ul>
-        </section>
-
-    </main>
-
-
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js');
-            });
-        }
-    </script>
 </body>
 
 </html>
