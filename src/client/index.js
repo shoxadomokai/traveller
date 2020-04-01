@@ -7,7 +7,6 @@ import { launchToDo } from "./js/results.js";
 import "./styles/resets.scss";
 import "./styles/main.scss";
 
-// import "./views/index.html";
 import "./views/results.html";
 
 //set images
@@ -17,10 +16,5 @@ import "./images/next.svg";
 import "./images/cloudy.svg";
 import "./images/poweredby-darksky.png";
 import "./images/poweredby-pixabay.png";
-
-// getResults().then(() => {
-//   resultsJS();
-//   launchToDo;
-// });
 
 export { extractInput, launchToDo };
