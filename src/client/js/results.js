@@ -1,5 +1,4 @@
 import { getData } from "./formHandler.js";
-import { getPage } from "./formHandler.js";
 import { countdownMaker } from "./countdown.js";
 import Litepicker from "litepicker";
 
@@ -54,7 +53,6 @@ export const resultsJS = () => {
   const toDoLocation = document.querySelector("#to-do__location");
   const toDoButton = document.querySelector("#to-do__button");
   const toDoSection = document.querySelector("#all-to-dos");
-  // const launchToDoButtons = document.querySelectorAll(".launch-to-do");
 
   var picker = new Litepicker({
     element: toDoDate,
