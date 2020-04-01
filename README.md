@@ -1,5 +1,3 @@
-![Lingu](./src/client/images/landscape-logo.svg)
-
 # Traveller - Trip Planner
 
 Traveller is an SPA built using DarkSky, Geonames and the Pixabay API.
