@@ -246,7 +246,7 @@ const createTrip = () => {
 const getCoordinates = async () => {
   for (let trip of trips) {
     await getData(
-      `http://api.geonames.org/postalCodeLookupJSON?placename=${trip.destination}&username=shox`
+      `http://secure.geonames.org/postalCodeLookupJSON?placename=${trip.destination}&username=shox`
     ).then(data => {
       trip.coordinates = `${data.postalcodes[0].lat},${data.postalcodes[0].lng}`;
     });
