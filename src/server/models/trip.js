@@ -20,6 +20,18 @@ const getTripsFromFile = cb => {
   });
 };
 
+const getCoordinates = async array => {
+  for (let trip of array) {
+    axios
+      .get(
+        `http://secure.geonames.org/postalCodeLookupJSON?placename=${trip.destination}&username=${process.env.GEONAMES_USERNAME}`
+      )
+      .then(data => {
+        trip.coordinates = `${data.postalcodes[0].lat},${data.postalcodes[0].lng}`;
+      });
+  }
+};
+
 const addWeather = async array => {
   let promises = [];
   for (let trip of array) {
@@ -60,14 +72,15 @@ module.exports = class Trip {
     this.venue = venue;
   }
 
-  static async addTrips(array) {
-    await addWeather(array);
-    await getImages(array);
-    await fs.writeFile(p, JSON.stringify(array), err => {
+  static async addTrips(trips) {
+    await getCoordinates(trips);
+    await addWeather(trips);
+    await getImages(trips);
+    await fs.writeFile(p, JSON.stringify(trips), err => {
       console.log(err);
     });
     try {
-      return array;
+      return trips;
     } catch (err) {
       console.log(err);
     }

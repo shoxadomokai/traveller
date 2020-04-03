@@ -89,14 +89,6 @@ const createForm = input => {
   addFormField.insertAdjacentHTML("beforebegin", formLayout);
 };
 
-addFormField.addEventListener("click", () => {
-  input++;
-  inputs.push(input);
-  createForm(input);
-  deleteFormField();
-  addDatePicker(minDate);
-});
-
 //delete the form fields
 const deleteFormField = () => {
   //get all the delete buttons at the moment of clicking
@@ -242,19 +234,8 @@ const createTrip = () => {
   }
 };
 
-//get the coordinates data for dark sky api
-const getCoordinates = async () => {
-  for (let trip of trips) {
-    await getData(
-      `http://secure.geonames.org/postalCodeLookupJSON?placename=${trip.destination}&username=shox`
-    ).then(data => {
-      trip.coordinates = `${data.postalcodes[0].lat},${data.postalcodes[0].lng}`;
-    });
-  }
-};
-
 //convert date rate into an array of dates to loop through to get weather forecasts in darksky api
-const getDates = (startDate, stopDate) => {
+export const getDates = (startDate, stopDate) => {
   var dateArray = [];
   var currentDate = new Date(startDate);
   var stopDate = new Date(stopDate);
@@ -269,4 +250,11 @@ const getDates = (startDate, stopDate) => {
 //initialise functions
 window.addEventListener("DOMContentLoaded", () => {
   addDatePicker(minDate);
+  addFormField.addEventListener("click", () => {
+    input++;
+    inputs.push(input);
+    createForm(input);
+    deleteFormField();
+    addDatePicker(minDate);
+  });
 });

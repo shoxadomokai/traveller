@@ -26,7 +26,7 @@ const tripRoutes = require("./routes/trip");
 app.use(tripRoutes);
 
 //allows the port to be set by the hosting platform
-var port = process.env.PORT || 8000;
+var port = process.env.PORT || 8080;
 // designates what port the app will listen to for incoming requests
 app.listen(port, function() {
   console.log(`Visit the website at: http://127.0.0.1:${port}/`);

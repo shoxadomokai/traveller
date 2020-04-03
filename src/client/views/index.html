@@ -14,6 +14,13 @@
     <title>Traveller</title>
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
 </head>
 
 <body>

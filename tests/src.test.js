@@ -1,16 +1,27 @@
-import { urlValidate } from "../src/client/js/formHandler";
-import { calc } from "../src/client/js/DOMManipulation";
+import { getDates } from "../src/client/js/formHandler";
+const fs = require("fs");
 
-test("it should check if a user's input is a URL", () => {
-  const input = "https://www.url1.dev";
-  const output = true;
-  expect(urlValidate(input)).toBe(output);
+const path = require("path");
+
+test("it should take a date range and convert it an array of all the dates in between in unix form", () => {
+  const start = "2 Apr, 2020";
+  const end = "5 Apr, 2020";
+  const output = 4;
+  expect(getDates(start, end)).toHaveLength(output);
 });
 
-test("it should let me know the degree of confidence of the sentiment analysis", () => {
-  const inputs = [1 / 3, 2 / 3, 1];
-  const outputs = ["low", "neutral", "high"];
-  for (let index in inputs) {
-    expect(calc(inputs[index])).toBe(outputs[index]);
-  }
+test("fetch data from file should return an array even if data doesn't exist one should be created", () => {
+  const getTripsFromFile = cb => {
+    fs.readFile(__dirname, (err, fileContent) => {
+      if (err) {
+        cb([]);
+      } else {
+        cb(JSON.parse(fileContent));
+      }
+    });
+  };
+
+  getTripsFromFile(trips => {
+    expect(Array.isArray(trips)).toBe(true);
+  });
 });

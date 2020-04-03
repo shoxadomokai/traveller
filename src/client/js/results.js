@@ -190,7 +190,11 @@ export const resultsJS = () => {
                                             <p class="display-4">${Math.round(
                                               weather.temperature
                                             )}<sup style="font-size: 50%;">F</sup></p>
-                                            <span>${weather.summary}</span>
+                                            <span>${
+                                              weather.summary
+                                                ? weather.summary
+                                                : "N/A"
+                                            }</span>
                                         </div>
                                         <div class="weather-day">
                                             <span class="day">${moment
